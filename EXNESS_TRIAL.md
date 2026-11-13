@@ -13,3 +13,5 @@ Shared limits: fixed stop-risk cap of 0.10% of starting account equity per ready
 The account-wide gate includes external position P&L and is an entry halt, not a guaranteed loss ceiling or automatic liquidation. Stop gaps/slippage can exceed estimated risk. Existing positions are excluded from bot results. Equal risk caps do not guarantee equal exposure or trade counts. Sampled drawdown is measured every 10 seconds. No API costs are incurred by the two initial rule-based adapters.
 
 From the workspace parent, use the isolated Python environment and the scripts in `Monn/exness_arena`. Dashboard: http://127.0.0.1:8765 . Run `python -m exness_arena.control pause` with `Monn` on PYTHONPATH to stop new entries and exit runners without closing positions. Tracker remains read-only and continues reporting. There is no automatic restart or automatic halt reset. Keep Windows and MT5 running.
+
+Deployment status: skipped at the user's explicit request. No Anthropic API credentials were created, requested again, or used; no Claude Trader process was started.
