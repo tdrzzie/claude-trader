@@ -53,3 +53,8 @@ logs/*.json
 .pytest_cache/
 .coverage
 htmlcov/
+
+# Local cent trial account state and temporary test files
+.exness-arena/
+.arena-test-*/
+__pycache__/

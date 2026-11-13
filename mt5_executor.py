@@ -17,12 +17,14 @@ Features:
 import os
 import json
 import MetaTrader5 as mt5
+if __import__("os").environ.get("EXNESS_BOT_ID"):
+    from exness_arena import mt5
 from datetime import datetime
 from dotenv import load_dotenv
 
 load_dotenv()
 
-MAGIC          = 20250401
+MAGIC          = 26111304
 MAX_PRICE_DRIFT_ATR = 0.5   # If price moved > 0.5 ATR since analysis → skip
 LOG_PATH       = "logs/executions.json"
 
@@ -592,7 +594,7 @@ def close_position(ticket: int, reason: str = "MANUAL_CLOSE") -> dict:
 
 def close_all_positions(reason: str = "MANUAL_CLOSE_ALL") -> list:
     """
-    Close ALL open APEX positions (magic == 20250401).
+    Close ALL open APEX positions (magic == 26111304).
 
     Used by:
     - Telegram /closeall command

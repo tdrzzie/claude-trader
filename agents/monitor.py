@@ -25,6 +25,8 @@ import threading
 import requests
 import anthropic
 import MetaTrader5 as mt5
+if __import__("os").environ.get("EXNESS_BOT_ID"):
+    from exness_arena import mt5
 from datetime import datetime
 from dotenv import load_dotenv
 
@@ -38,7 +40,7 @@ from .usdjpy_watch import USDJPYWatch
 
 load_dotenv()
 
-MAGIC          = 20250401
+MAGIC          = 26111304
 WATCH_INTERVAL = 10   # seconds between price checks
 
 

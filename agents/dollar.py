@@ -21,6 +21,8 @@ import json
 import requests
 import anthropic
 import MetaTrader5 as mt5
+if __import__("os").environ.get("EXNESS_BOT_ID"):
+    from exness_arena import mt5
 import pandas as pd
 import numpy as np
 from datetime import datetime, date, timedelta

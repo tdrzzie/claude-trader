@@ -19,6 +19,8 @@ import json
 import time
 import anthropic
 import MetaTrader5 as mt5
+if __import__("os").environ.get("EXNESS_BOT_ID"):
+    from exness_arena import mt5
 import pandas as pd
 import numpy as np
 from datetime import datetime, timedelta
@@ -39,7 +41,7 @@ ATR_PERIOD   = 14
 ADX_PERIOD   = 14
 CANDLES_BACK = 250
 MAX_SPREAD   = 0.030    # 3.0 pips max for USDJPY
-MAGIC        = 20250401
+MAGIC        = 26111304
 
 # BoJ intervention danger zone
 BOJ_INTERVENTION_LEVEL = 150.00

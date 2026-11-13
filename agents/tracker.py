@@ -20,6 +20,8 @@ import os
 import json
 import requests
 import MetaTrader5 as mt5
+if __import__("os").environ.get("EXNESS_BOT_ID"):
+    from exness_arena import mt5
 from datetime import datetime, timedelta
 from collections import defaultdict
 from dotenv import load_dotenv
@@ -28,7 +30,7 @@ load_dotenv()
 
 LOG_TRADES     = "logs/trades.json"
 LOG_EXECUTIONS = "logs/executions.json"
-MAGIC          = 20250401
+MAGIC          = 26111304
 
 
 class TrackerAgent:

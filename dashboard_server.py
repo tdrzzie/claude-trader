@@ -20,7 +20,7 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-MAGIC = 20250401
+MAGIC = 26111304
 PORT  = 8080
 
 
@@ -29,6 +29,8 @@ PORT  = 8080
 def get_mt5_data() -> dict | None:
     try:
         import MetaTrader5 as mt5
+        if __import__("os").environ.get("EXNESS_BOT_ID"):
+            from exness_arena import mt5
         login    = int(os.getenv("MT5_LOGIN", 0))
         password = os.getenv("MT5_PASSWORD", "")
         server   = os.getenv("MT5_SERVER", "")

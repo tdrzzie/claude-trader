@@ -19,6 +19,8 @@ import json
 import time
 import anthropic
 import MetaTrader5 as mt5
+if __import__("os").environ.get("EXNESS_BOT_ID"):
+    from exness_arena import mt5
 import pandas as pd
 import numpy as np
 from datetime import datetime, timedelta
@@ -42,7 +44,7 @@ STOCH_K        = 14
 STOCH_D        = 3
 CANDLES_BACK   = 250
 MAX_SPREAD     = 0.00020   # 2.0 pips max
-MAGIC          = 20250401
+MAGIC          = 26111304
 
 
 # ── SMC Detection ─────────────────────────────────────────────────────────────

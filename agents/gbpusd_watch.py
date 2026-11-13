@@ -20,13 +20,15 @@ import os
 import json
 import requests
 import MetaTrader5 as mt5
+if __import__("os").environ.get("EXNESS_BOT_ID"):
+    from exness_arena import mt5
 import pandas as pd
 from datetime import datetime, timedelta
 from dotenv import load_dotenv
 
 load_dotenv()
 
-MAGIC          = 20250401
+MAGIC          = 26111304
 SYMBOL         = "GBPUSD"
 PIP_SIZE       = 0.0001
 NEWS_COUNTRIES = ["USD", "GBP"]
